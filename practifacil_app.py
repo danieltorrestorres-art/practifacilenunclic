@@ -47,7 +47,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("⚡ Practifacil - Catálogo Digital")
+st.title("⚡ Practifacilenunclic - Catálogo Digital")
 st.write("Mira nuestros productos disponibles y haz tu pedido directamente por WhatsApp.")
 
 # Base de datos integrada apuntando a los archivos locales
