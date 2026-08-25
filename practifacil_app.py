@@ -62,8 +62,8 @@ data_productos = {
     "categoria": ["relojes", "relojes", "conectividad", "relojes", "conectividad"],
     "precio_venta": [18.00, 15.00, 10.00, 12.00, 7.00],
     "imagen_local": [
-        "./static/reloj1.avif",  
-        "./static/reloj2.avif",  
+        "/reloj1.avif",  
+        "/reloj2.avif",  
         "./static/hub1.avif",    
         "./static/reloj3.avif",  
         "./static/hub2.avif"     
