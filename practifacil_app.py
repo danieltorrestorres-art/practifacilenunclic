@@ -40,17 +40,17 @@ st.markdown("""
         background-color: #1a1c23;
         border: 2px dashed #25D366;
         border-radius: 12px;
-        padding: 15px;
+        padding: 20px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 25px;
     }
     </style>
 """, unsafe_allow_html=True)
 
-st.title("⚡ Practifacilenunclic - Catálogo Digital")
+st.title("⚡ Practifacil - Catálogo Digital")
 st.write("Mira nuestros productos disponibles y haz tu pedido directamente por WhatsApp.")
 
-# Base de datos integrada apuntando a los archivos locales de tu Mac
+# Base de datos integrada apuntando a los archivos locales
 data_productos = {
     "producto": [
         "Reloj Inteligente (Smartwatch) Deportivo Unixes",
@@ -84,7 +84,7 @@ def generar_grid_productos(dataframe_filtrado):
             try:
                 st.image(fila.imagen_local, use_container_width=True)
             except Exception:
-                st.caption("⚠️ Coloca la foto en la carpeta")
+                st.caption("⚠️ Foto no encontrada")
             st.markdown(f'<div class="titulo-producto">{fila.producto}</div>', unsafe_allow_html=True)
             st.markdown(f'<div class="precio-producto">${float(fila.precio_venta):,.2f}</div>', unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
@@ -98,25 +98,20 @@ with tab_conectividad:
     df_conectividad = df_activos[df_activos["categoria"] == "conectividad"]
     generar_grid_productos(df_conectividad)
 
-# 4. BOTÓN UNIFICADO E INMUTABLE DE ATENCIÓN (Rompe cualquier bloqueo)
+# 4. BOTÓN OFICIAL Y SEGURO (Rompe cualquier bloqueo)
 st.markdown("---")
 st.markdown('<div class="zona-contacto">', unsafe_allow_html=True)
 st.markdown("<h3 style='color: #25D366; margin-top:0;'>🟢 ¿Listo para comprar? Contacta al vendedor</h3>", unsafe_allow_html=True)
-st.write("Escríbenos directamente o escanea el código para levantar tu pedido al instante:")
+st.write("Usa el enlace oficial de abajo para levantar tu pedido o escanea el código desde otra pantalla:")
 
-col_btn, col_qr = st.columns([2, 1])
+# Usamos el formato oficial de enlace corto de WhatsApp [3]
+url_oficial = "https://wa.me"
 
-with col_btn:
-    st.write("⚡ **Número de atención:** +58 414-4021239")
-    # Enlace de texto puro en formato markdown. Al no ser un pop-up, el navegador NO lo bloquea bajo ningún concepto.
-        # Reemplaza la línea del enlace por esta versión sin texto largo para evitar el bloqueo del teléfono
-      # Reemplaza la línea del enlace por esta versión universal que los teléfonos no devuelven
-        # Reemplaza la línea del enlace por el protocolo nativo que abre la app en el teléfono de golpe
-    st.markdown('<a href="whatsapp://send?phone=584144021239" target="_top" style="color:#25D366; font-weight:bold; font-size:18px; text-decoration:none;">👉 HACER CLIC AQUÍ PARA ABRIR WHATSAPP 👈</a>', unsafe_allow_html=True)
-    st.info("💡 Si estás en tu computadora y el enlace no abre, puedes guardar el número arriba o escanear el código de la derecha con la cámara de tu teléfono.")
+# Botón nativo de Streamlit que los navegadores móviles respetan obligatoriamente
+st.link_button("🔥 EMPEZAR CHAT EN WHATSAPP NOW 🔥", url_oficial, use_container_width=True)
 
-with col_qr:
-    # Mostramos un QR oficial generado en tiempo real para tu número. ¡Infalible!
-    st.image("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me", width=120)
+st.markdown("<br>", unsafe_allow_html=True)
+# Mostramos un QR oficial generado para tu número. ¡Este nunca falla!
+st.image("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me", width=120)
 
 st.markdown('</div>', unsafe_allow_html=True)
