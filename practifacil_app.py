@@ -110,7 +110,9 @@ with col_btn:
     st.write("⚡ **Número de atención:** +58 414-4021239")
     # Enlace de texto puro en formato markdown. Al no ser un pop-up, el navegador NO lo bloquea bajo ningún concepto.
         # Reemplaza la línea del enlace por esta versión sin texto largo para evitar el bloqueo del teléfono
-    st.markdown("[👉 HACER CLIC AQUÍ PARA ABRIR WHATSAPP 👈](https://wa.me)", unsafe_allow_html=True)
+      # Reemplaza la línea del enlace por esta versión universal que los teléfonos no devuelven
+    st.markdown("[👉 HACER CLIC AQUÍ PARA ABRIR WHATSAPP 👈](https://whatsapp.com)", unsafe_allow_html=True)
+
     st.info("💡 Si estás en tu computadora y el enlace no abre, puedes guardar el número arriba o escanear el código de la derecha con la cámara de tu teléfono.")
 
 with col_qr:
