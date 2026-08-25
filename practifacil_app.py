@@ -44,6 +44,13 @@ st.markdown("""
         text-align: center;
         margin-top: 25px;
     }
+    /* Estilo para el link de texto gigante */
+    .link-directo-ws {
+        font-size: 20px;
+        font-weight: bold;
+        color: #25D366 !important;
+        text-decoration: underline !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -98,19 +105,18 @@ with tab_conectividad:
     df_conectividad = df_activos[df_activos["categoria"] == "conectividad"]
     generar_grid_productos(df_conectividad)
 
-# 4. BOTÓN OFICIAL Y SEGURO (Rompe cualquier bloqueo)
+# 4. RECUADRO DE ATENCIÓN DIRECTA INFALIBLE
 st.markdown("---")
 st.markdown('<div class="zona-contacto">', unsafe_allow_html=True)
-st.markdown("<h3 style='color: #25D366; margin-top:0;'>🟢 ¿Listo para comprar? Contacta al vendedor</h3>", unsafe_allow_html=True)
-st.write("Usa el enlace oficial de abajo para levantar tu pedido o escanea el código desde otra pantalla:")
+st.markdown("<h3 style='color: #25D366; margin-top:0;'>🟢 ¿Cómo hacer tu pedido?</h3>", unsafe_allow_html=True)
+st.write("Debido a las políticas de seguridad de los teléfonos, haz clic directamente en el texto subrayado de abajo para iniciar tu chat:")
 
-# Usamos el formato oficial de enlace corto de WhatsApp [3]
-url_oficial = "https://wa.me"
+# Usamos una etiqueta HTML de enlace puro (<a>) con target="_blank"
+st.markdown('<br><a href="https://wa.me" target="_blank" class="link-directo-ws">👉 TOCAR AQUÍ PARA ENVIAR MENSAJE DE COMPRA 👈</a><br><br>', unsafe_allow_html=True)
 
-# Botón nativo de Streamlit que los navegadores móviles respetan obligatoriamente
-st.link_button("🔥 EMPEZAR CHAT EN WHATSAPP NOW 🔥", url_oficial, use_container_width=True)
+st.write("📱 **O guarda nuestro contacto directo:** +58 414-4021239")
+st.write("📷 **O escanea el código QR desde otra pantalla:**")
 
-st.markdown("<br>", unsafe_allow_html=True)
 # Mostramos un QR oficial generado para tu número. ¡Este nunca falla!
 st.image("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me", width=120)
 
